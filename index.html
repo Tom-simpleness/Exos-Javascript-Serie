@@ -51,7 +51,53 @@
 
 </form>
 
+<form >
+    <label>Nombre en O et 5 !</label>
+    <input class="nombre" type="number">
+    <input class="nombre" type="button" value="RESULTAT">
+
+</form>
+
+
+    <label>Liste de course</label>
+    <input class="liste" type="text">
+    <input type= "" class="liste">lister </input>
+
+<div> <ul> Liste final
+
+</ul></div>
+
+
+
+<label>Nombre à deviner entre 0 et 50</label>
+<input class="deviner" type="number">
+<button class="deviner"> test </button>
+
+
+<footer></footer>
+
 <script>
+
+    // exercice 7
+
+
+
+    window.onload = function ConfirmMessage() {
+        if (confirm("Es-tu patmo ???")) {
+            var ImageHappy = 'image/preview.jpg';
+        var emoji= document.createElement('img');
+        emoji.src = ImageHappy ;
+            document.getElementsByTagName('footer')[0].appendChild(emoji);
+        }
+        else {
+            var ImageSad = 'image/711NDQNFqxL.png';
+            var emoji= document.createElement('img');
+            emoji.src = ImageSad ;
+            document.getElementsByTagName('footer')[0].appendChild(emoji)
+        }
+    }
+
+
 // exercie 1
 
     document.getElementsByTagName('input')[2].addEventListener('click',calcul);
@@ -121,8 +167,52 @@ function difference(){
     }
 }
 
-// exercice 7
+// exercice 8
 
+    var NombreEtLettre = {0:'zéro',1:'un',2:'deux',3:'trois',4:'quatre',5:'cinq'}
+
+    document.getElementsByClassName('nombre')[1].addEventListener('click', NombreLettre);
+function NombreLettre() {
+    var choix = document.getElementsByClassName('nombre')[0].value;
+    if (choix < 0 || choix > 5) {
+        alert('erreur');
+    }
+    else {
+       alert(NombreEtLettre[choix]);
+    }
+}
+
+// exercice 9
+
+    document.getElementsByClassName('liste')[1].addEventListener('click', lister);
+    function lister(){
+        var ListeElem = document.getElementsByClassName('liste')[0].value;
+        var liste= document.getElementsByTagName('ul')[0];
+        var li = document.createElement('li');
+        li.innerHTML= ListeElem ;
+        liste.appendChild(li);
+
+    }
+
+    // exercice 10
+
+
+    const nb = Math.floor(Math.random() * 51);
+    alert(nb);
+
+    document.getElementsByClassName('deviner')[1].addEventListener('click', comparer);
+    function comparer()
+    {
+        var valeur = document.getElementsByClassName('deviner')[0].value;
+
+        if ( valeur>nb){
+            alert('plus petit')
+        }    else if (valeur< nb){
+            alert('plus grand')
+        }else {
+            alert('gagné')
+        }
+        }
 
 
 
