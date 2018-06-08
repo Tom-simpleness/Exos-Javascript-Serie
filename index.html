@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<header></header>
+<form action="">
+    <label for="">Nombre 1</label>
+    <input type="number">
+    <label for="">Nombre 2</label>
+    <input type="number">
+    <input type="button" value="calculer">
+</form>
+
+<form>
+
+    <input type="color">
+    <input type="button" value="coloriser">
+
+</form>
+
+<form>
+    <label for="">image url</label>
+    <input type="url">
+    <input type="button" value="Header">
+    
+</form>
+
+<form >
+    <input class="modulo" type="number">
+    <input class="modulo" type="button" value="RESTE">
+
+</form>
+
+<form >
+    <label>AGE</label>
+    <input class="jours" type="number">
+    <input class="jours" type="button" value="JOURS VECU">
+
+</form>
+
+<form >
+    <label>AGE</label>
+    <input class="AgeAnnee" type="number">
+    <label>Objectif</label>
+    <input class="AgeAnnee" type="number">
+    <input class="AgeAnnee" type="button" value="JOURS QUI RESTE">
+
+</form>
+
+<script>
+// exercie 1
+
+    document.getElementsByTagName('input')[2].addEventListener('click',calcul);
+
+    function calcul(){
+        var a = document.getElementsByTagName('input')[0].value;
+        var b = document.getElementsByTagName('input')[1].value;
+        var resultat = a*b;
+        alert(a+' multiplié par '+b+' vaut '+resultat);
+    }
+
+//    exercice 2
+
+document.getElementsByTagName('input')[4].addEventListener('click',coloriser);
+    function coloriser() {
+        var Couleur = document.getElementsByTagName('input')[3].value;
+        document.body.style.backgroundColor= Couleur;
+
+    }
+    
+  //  exercice 3
+
+document.getElementsByTagName('input')[6].addEventListener('click', ImageIN);
+    function ImageIN() {
+        var adresse = document.getElementsByTagName('input')[5].value;
+        var img = document.createElement('img');
+        img.src= adresse;
+        document.getElementsByTagName('header')[0].appendChild(img);
+
+    }
+
+    //exercice 4
+
+document.getElementsByClassName('modulo')[1].addEventListener('click', division);
+    function division(){
+        var C =document.getElementsByClassName('modulo')[0].value;
+        var D = ( C % 5);
+        document.write("Si l'on divise"+C+"par 5, le reste est de :"+D);
+    }
+
+    // exercice 5
+
+document.getElementsByClassName('jours')[1].addEventListener('click', multiplication);
+function multiplication(){
+    var E =document.getElementsByClassName('jours')[0].value;
+    var F = E * 365 ;
+    document.write("Vous avez vécu"+F+'jours');
+}
+
+//exercice 6
+
+document.getElementsByClassName('AgeAnnee')[2].addEventListener('click', difference);
+function difference(){
+    var G =document.getElementsByClassName('AgeAnnee')[0].value;
+    var H= document.getElementsByClassName('AgeAnnee')[1].value;
+    var Gtotal= G*365;
+    var Htotal= H*365;
+    var K= Htotal - Gtotal;
+    if (G<H){
+        alert('Vous avez vécu '+Gtotal+', il vous reste '+K+' jours !');
+    }
+    else if(G>H){
+        alert('erreur');
+    }
+    else {
+        alert('Vous avez vécu '+Gtotal+', vous allez mourrir bientôt, profitez de la vie')
+    }
+}
+
+// exercice 7
+
+
+
+
+
+</script>
+</body>
+</html>
